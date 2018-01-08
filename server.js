@@ -1,1 +1,6 @@
-console.log('Test if server is working');
+const express = require('express');
+const app = express();
+
+app.listen(3000, function() {
+  console.log('listening on 3000');
+});

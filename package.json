@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/neroshan12/jobHuntr/issues"
   },
-  "homepage": "https://github.com/neroshan12/jobHuntr#readme"
+  "homepage": "https://github.com/neroshan12/jobHuntr#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
