@@ -2,7 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser'); // to handle reading data from <form>
 const app = express();
 const MongoClient = require('mongodb').MongoClient; //connect to MongoDB
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs'); // setting view engine
+
 var db;
 
 MongoClient.connect(
@@ -23,12 +24,16 @@ app.use(bodyParser.urlencoded({ extended: true })); // Express allows 'use' to a
 // urlencoded withing bodyparser tell body parser to extract data from <form> element and add to the body property of request object
 
 app.get('/', (req, res) => {
-  const cursor = db
+  // need to render the ejs file when handling the GET request
+  const cursor = db // .find() method returns a cursor (Mongo object). Cursor contains jobslist from database
     .collection('jobslist')
-    .find()
+    .find() // get jobslist by using find method thats available in the collection method
     .toArray((err, result) => {
+      // object contains the toArray method. toArray takes a callback function that allows you to manipulate jobslist
       console.log(result);
-      res.render('index.ejs', { jobslist: result });
+      res.render('index.ejs', { jobslist: result }); // use the render object built into the response object render
+      // param1 = file you are rendering (places in a views folder), param2 = object that passes data on to view
+      // setting the reuslts(an array) as the joblist array used in the index.ejs file
     });
 });
 
