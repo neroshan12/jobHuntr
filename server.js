@@ -8,3 +8,7 @@ app.listen(3000, () => {
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
+
+app.post('/joblist', (req, res) => {
+  console.log('Does this work?');
+});
