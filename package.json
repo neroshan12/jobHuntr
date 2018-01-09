@@ -1,10 +1,12 @@
 {
   "name": "jobhuntr",
   "version": "1.0.0",
-  "description": "The jobHuntr app (awful name, I know) is a CRUD app that will help job hunters keep track of companies that they have applied to.",
+  "description":
+    "The jobHuntr app (awful name, I know) is a CRUD app that will help job hunters keep track of companies that they have applied to.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +20,8 @@
   "homepage": "https://github.com/neroshan12/jobHuntr#readme",
   "dependencies": {
     "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.9"
   }
 }
