@@ -4,11 +4,13 @@ const app = express();
 const MongoClient = require('mongodb').MongoClient; //connect to MongoDB
 
 var db;
+
 MongoClient.connect(
   'mongodb://<dbuser>:<dbpassword>@ds247327.mlab.com:47327/joblist',
-  (err, database) => {
+  (err, client) => {
     if (err) return console.log(err);
-    db = database;
+    db = client.db('joblist');
+
     app.listen(3000, () => {
       // moved into connect so servers only start when the database is connected
       console.log('listening on 3000');
@@ -24,5 +26,11 @@ app.get('/', (req, res) => {
 });
 
 app.post('/joblist', (req, res) => {
-  console.log(req.body);
+  db.collection('jobslist').save(req.body, (err, result) => {
+    // collection = named location to store data. String will be name of collection when calling MongoDB's .collection() method
+    if (err) return console.log(err);
+
+    console.log('saved to database');
+    res.redirect('/');
+  });
 });
