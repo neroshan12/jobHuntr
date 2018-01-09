@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homepage</title>
+</head>
+<body>
+  Welcome to jobHuntr
+
+  <ul class="jobslist">
+  <% for(var i=0; i<jobslist.length; i++) {%>
+    <li class="jobslist">
+      <span><%= jobslist[i].name %></span>
+      <span><%= jobslist[i].quote %></span>
+    </li>
+  <% } %>
+  </ul>
+
+  <form action="/jobslist" method="POST">
+    <input type="text" placeholder="company" name="company">
+    <input type="text" placeholder="role" name="role">
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

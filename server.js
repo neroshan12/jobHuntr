@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser'); // to handle reading data from <form>
 const app = express();
 const MongoClient = require('mongodb').MongoClient; //connect to MongoDB
-
+app.set('view engine', 'ejs');
 var db;
 
 MongoClient.connect(
