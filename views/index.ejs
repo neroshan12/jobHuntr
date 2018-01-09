@@ -9,9 +9,9 @@
 
   <ul class="jobslist">
   <% for(var i=0; i<jobslist.length; i++) {%>
-    <li class="jobslist">
+    <li class="jobs">
+      <span><%= jobslist[i].company %></span>
       <span><%= jobslist[i].name %></span>
-      <span><%= jobslist[i].quote %></span>
     </li>
   <% } %>
   </ul>

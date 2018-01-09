@@ -26,17 +26,16 @@ app.get('/', (req, res) => {
   const cursor = db
     .collection('jobslist')
     .find()
-    .toArray((err, results) => {
-      console.log(results);
-      res.sendFile(__dirname + '/index.html');
+    .toArray((err, result) => {
+      console.log(result);
+      res.render('index.ejs', { jobslist: result });
     });
 });
 
-app.post('/joblist', (req, res) => {
+app.post('/jobslist', (req, res) => {
   db.collection('jobslist').save(req.body, (err, result) => {
     // collection = named location to store data. String will be name of collection when calling MongoDB's .collection() method
     if (err) return console.log(err);
-
     console.log('saved to database');
     res.redirect('/');
   });
