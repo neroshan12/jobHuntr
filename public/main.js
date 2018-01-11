@@ -1,10 +1,10 @@
 // external javascript file to execute the PUT request when the button is clicked
 
 var update = document.getElementById('update');
-console.log(3);
+
 update.addEventListener('click', () => {
   // send PUT request
-  console.log(4);
+
   fetch('jobslist', {
     method: 'put', // because sending a put request
     headers: { 'Content-Type': 'application/json' }, // HTTP headers you want to send to the server (object with multiple K-V pairs). Content type = string converted to JSON obj.
@@ -28,14 +28,17 @@ update.addEventListener('click', () => {
 var del = document.getElementById('delete');
 
 del.addEventListener('click', function() {
+  var totalJobs = document.getElementsByClassName('jobs').length;
+  var latestJob = document.getElementById(totalJobs - 1).innerHTML;
+  var latestJobArray = latestJob.trim().split(' ');
   fetch('jobslist', {
     method: 'delete',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      company: 'Test',
-      role: 'Test'
+      company: latestJobArray[0],
+      role: latestJobArray[1]
     })
   })
     .then(res => {
@@ -43,7 +46,7 @@ del.addEventListener('click', function() {
     })
     .then(data => {
       console.log(data);
-      window.location.reload();
+      //  window.location.reload();
     });
 });
 // easiest way to trigger a PUT request is to use Fetch API
