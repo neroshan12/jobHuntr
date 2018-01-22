@@ -6,19 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Homepage</title>
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" >
-
+  <link rel="stylesheet" href="css/custom.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 </head>
-<body>
   <nav class="navbar navbar-inverse navbar-static-top">
     <div class="container">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-       <a class="navbar-brand" href="#">jobHuntr</a>
+       <a class="navbar-brand" href="#" >jobHuntr</a>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
@@ -27,29 +21,30 @@
       </div>
     </div>
   </nav>
-  <title>Welcome to jobHuntr</title>
+  <body>
+    <ul id="jobslist" class="jobslist">
+      <% for(var i=0; i<jobslist.length; i++) {%>
+        <li class="jobs" id="<%= i %>">
+        <%= jobslist[i].company %> <%= jobslist[i].role %>
+        </li>
+      <% } %>
+    </ul>
 
-  <ul id="jobslist" class="jobslist">
-    <% for(var i=0; i<jobslist.length; i++) {%>
-      <li class="jobs" id="<%= i %>">
-      <%= jobslist[i].company %> <%= jobslist[i].role %>
-      </li>
-    <% } %>
-  </ul>
+    <form action="/jobslist" method="POST">
+      <input type="text" placeholder="company" name="company">
+      <br></br>
+      <input type="text" placeholder="role" name="role">
+      <br></br>
+      <button type="submit">Submit</button>
+    </form>
+    <div>
+      <button id="update">Update</button>
+    </div>
+    <div>
+      <button id="delete">Delete</button>
+    </div>
 
-  <form action="/jobslist" method="POST">
-    <input type="text" placeholder="company" name="company">
-    <input type="text" placeholder="role" name="role">
-    <button type="submit">Submit</button>
-  </form>
-  <div>
-    <h2>Update this text</h2>
-    <button id="update">Update</button>
-  </div>
-  <div>
-    <h2>Delete</h2>
-    <button id="delete">Delete</button>
-  </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="main.js"></script>
 </body>

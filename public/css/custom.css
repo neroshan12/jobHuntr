@@ -1,0 +1,29 @@
+.navbar {
+  margin-bottom: 0;
+  background: linear-gradient(to right, #0066ff, #0099ff);
+  border-bottom: none;
+}
+
+body {
+  background: linear-gradient(to right, #0066ff, #0099ff);
+  color: #f7f7f7;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h2 {
+  font-weight: bold;
+}
+p {
+  font-size: 16px;
+  color: #cdcdcd;
+  font-weight: bold;
+}
+
+button {
+  background: Transparent;
+  font-weight: bold;
+  border: none;
+  color: #f7f7f7;
+  font-family: 'Montserrat', sans-serif;
+}
