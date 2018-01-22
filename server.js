@@ -8,22 +8,19 @@ app.use(express.static('public')); // built in middleware to make folder public
 
 var db;
 
-MongoClient.connect(
-  'mongodb://joblist:123456@ds247007.mlab.com:47007/joblist',
-  (err, client) => {
-    if (err) return console.log(err);
-    db = client.db('joblist');
-    const cursor = db
-      .collection('jobslist')
-      .find()
-      .toArray();
-    console.log(cursor);
+MongoClient.connect('INSERT MONGODB URI HERE', (err, client) => {
+  if (err) return console.log(err);
+  db = client.db('joblist');
+  const cursor = db
+    .collection('jobslist')
+    .find()
+    .toArray();
+  console.log(cursor);
 
-    app.listen(3000, () => {
-      console.log('listening on 3000');
-    });
-  }
-);
+  app.listen(3000, () => {
+    console.log('listening on 3000');
+  });
+});
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
