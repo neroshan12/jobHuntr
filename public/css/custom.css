@@ -7,17 +7,42 @@
 body {
   background: linear-gradient(to right, #0066ff, #0099ff);
   color: #f7f7f7;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Merriweather';
+}
+
+.navbar-brand {
+  font-family: 'Merriweather';
+  font-size: 35px;
+  color: #f7f7f7;
 }
 
 h1,
 h2 {
   font-weight: bold;
+  font-family: 'Merriweather';
+  padding-left: 35px;
 }
-p {
-  font-size: 16px;
-  color: #cdcdcd;
-  font-weight: bold;
+
+input {
+  font-family: 'Merriweather';
+  color: #f7f7f7;
+  background: transparent;
+  border: none;
+}
+
+#list {
+  padding-left: 20px;
+  font-size: 30px;
+}
+
+#buttons {
+  padding-left: 30px;
+  font-size: 40px;
+}
+
+#input-box {
+  padding-left: 35px;
+  font-size: 20px;
 }
 
 button {
@@ -25,5 +50,5 @@ button {
   font-weight: bold;
   border: none;
   color: #f7f7f7;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Merriweather';
 }

@@ -7,34 +7,28 @@
   <title>Homepage</title>
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" >
   <link rel="stylesheet" href="css/custom.css">
-  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
 </head>
-  <nav class="navbar navbar-inverse navbar-static-top">
-    <div class="container">
-      <div class="navbar-header">
-       <a class="navbar-brand" href="#" >jobHuntr</a>
-      </div>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">About</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+
   <body>
+    <h1>jobHuntr</h1>
+    <div id="list">
     <ul id="jobslist" class="jobslist">
       <% for(var i=0; i<jobslist.length; i++) {%>
         <li class="jobs" id="<%= i %>">
-        <%= jobslist[i].company %> <%= jobslist[i].role %>
+        <%= jobslist[i].company %> - <%= jobslist[i].role %>
         </li>
       <% } %>
     </ul>
-
+  </div>
+  <div id="input-box">
     <form action="/jobslist" method="POST">
       <input type="text" placeholder="company" name="company">
       <br></br>
       <input type="text" placeholder="role" name="role">
+  </div>
       <br></br>
+      <div id="buttons">
       <button type="submit">Submit</button>
     </form>
     <div>
@@ -43,7 +37,7 @@
     <div>
       <button id="delete">Delete</button>
     </div>
-
+  </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="main.js"></script>
