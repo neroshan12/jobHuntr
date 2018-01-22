@@ -44,9 +44,10 @@ I'd like to be able to delete companies and roles from the list.
 ## Running the application
 
 * git clone https://github.com/neroshan12/jobHuntr.git
+* npm install
 * npm install mongodb --save
 * create and account with mLab (https://mlab.com/)
-* update server.js file with username and password from mLab
+* update server.js file with MongoDB URI, username and password from mLab
 * set username and password as an Environment Variable (https://www.twilio.com/blog/2017/08/working-with-environment-variables-in-node-js.html)
 * run node server.js
 
