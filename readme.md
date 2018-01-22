@@ -58,3 +58,5 @@ I'd like to be able to delete companies and roles from the list.
 ## Authors
 
 * [Nero Siva](https://github.com/neroshan12)
+
+![Alt text](/public/screenshot.png)
