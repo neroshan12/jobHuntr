@@ -2,18 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Homepage</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" >
 
 </head>
 <body>
-  Welcome to jobHuntr
+  <nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+       <a class="navbar-brand" href="#">jobHuntr</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <title>Welcome to jobHuntr</title>
 
   <ul id="jobslist" class="jobslist">
-  <% for(var i=0; i<jobslist.length; i++) {%>
-    <li class="jobs" id="<%= i %>">
-    <%= jobslist[i].company %> <%= jobslist[i].role %>
-    </li>
-  <% } %>
+    <% for(var i=0; i<jobslist.length; i++) {%>
+      <li class="jobs" id="<%= i %>">
+      <%= jobslist[i].company %> <%= jobslist[i].role %>
+      </li>
+    <% } %>
   </ul>
 
   <form action="/jobslist" method="POST">
@@ -29,7 +50,7 @@
     <h2>Delete</h2>
     <button id="delete">Delete</button>
   </div>
-  <script src="main.js"></script>
-
+    <script src="js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
